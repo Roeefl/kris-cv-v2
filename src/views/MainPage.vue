@@ -3,6 +3,7 @@
     <aside class="side">
       <section class="side-section">
         <h3 class="side-title">
+          <unicon name="user-square" fill="white" height="14" />
           פרטים אישיים
         </h3>
         <ul class="fields">
@@ -18,18 +19,39 @@
       </section>
       <section class="side-section">
         <h3 class="side-title">
+          <unicon name="english-to-chinese" fill="white" height="14" />
           שפות
         </h3>
-        <ul class="fields">
-          <li v-for="language in languages" :key="language.key" class="field">
-            <h5 class="language-label">
-              {{ language.label }}
-            </h5>
-            <div class="language-value">
-              <div class="progress" :class="`level-${language.value}`" />
-            </div>
+        <Languages />
+      </section>
+      <section class="side-section">
+        <h3 class="side-title">
+          <unicon name="shield" fill="white" height="14" />
+          שירות צבאי
+        </h3>
+        <h5 class="field-label">
+          2009-2011
+        </h5>
+        <p class="army-service">
+          ראש לשכת אטק"ל
+        </p>
+        <ul class="description-bullets">
+          <li class="bullet">
+            ניהול קשרי החוץ של הלשכה
+          </li>
+          <li class="bullet">
+            קידום שיתופי פעולה ונושאים אשר על סדר היום הארגוני
           </li>
         </ul>
+      </section>
+      <section class="side-section">
+        <h3 class="side-title">
+          <unicon name="silent-squint" fill="white" height="14" />
+          התנדבויות
+        </h3>
+        <h5 class="field-label">
+          2009-2011
+        </h5>
       </section>
     </aside>
     <main class="main">
@@ -59,14 +81,15 @@
 
 <script>
   import personalFields from '@/data/personal';
-  import languages from '@/data/languages';
   import sections from '@/data/sections';
+  import Languages from '@/components/Languages';
   import Section from '@/components/Section';
 
   export default {
     name: 'MainPage',
     components: {
       Section,
+      Languages,
     },
     data: () => ({
       name: 'קריסטינה קרפה קורבוט אוריה',
@@ -78,9 +101,6 @@
       },
       personalFields() {
         return personalFields;
-      },
-      languages() {
-        return languages;
       },
     },
   }
@@ -118,10 +138,10 @@
         .field {
           font-size: $font-size-sm;
           margin-bottom: $spacer / 3;
+        }
 
-          .field-label {
-            color: $bright;
-          }
+        .field-label {
+          color: $bright;
         }
       }
     }
@@ -160,41 +180,27 @@
     }
   }
 
+  .side-section {
+    & + & {
+      margin-top: $spacer / 2;
+    }
+  }
+
   .section {
     & + & {
       margin-top: $spacer / 2;
     }
   }
 
-  .language-value {
-    width: 90%;
-    height: 5px;
-    border-radius: 1px;
-    background: $bright;
+  .description-bullets {
+    font-size: $font-size-sm;
+    list-style: square;
+    padding-right: $spacer * 1.5;
+  }
 
-    .progress {
-      background: $white;
-      height: 5px;
-
-      &.level-1 {
-        width: 20%;
-      }
-
-      &.level-2 {
-        width: 40%;
-      }
-
-      &.level-3 {
-        width: 60%;
-      }
-
-      &.level-4 {
-        width: 80%;
-      }
-
-      &.level-5 {
-        width: 100%;
-      }
+  .bullet {
+    & + & {
+      margin-top: $spacer / 6;
     }
   }
 </style>

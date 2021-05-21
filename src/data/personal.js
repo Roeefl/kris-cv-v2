@@ -17,6 +17,6 @@ export default [
   {
     key: 'birthDate',
     label: 'תאריך לידה',
-    value: '25.07.1989',
+    value: 'יולי 1989',
   },
 ];
