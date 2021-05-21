@@ -1,0 +1,5 @@
+@mixin gridded() {
+  display: grid;
+  grid-template-columns: 6% 92%;
+  gap: 2%;
+}

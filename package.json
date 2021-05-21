@@ -12,7 +12,8 @@
     "node-sass": "^6.0.0",
     "sass": "^1.32.13",
     "sass-loader": "10.2.0",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-unicons": "^3.2.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
