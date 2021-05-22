@@ -66,7 +66,7 @@
         padding: $spacer / 6 $spacer / 2;
         width: fit-content;
         background: $primary;
-        color: $white;
+        color: $light;
       }
     }
 

@@ -1,11 +1,10 @@
 <template>
   <div class="container">
     <aside class="side">
-      <section class="side-section">
-        <h3 class="side-title">
-          <unicon name="user-square" fill="white" height="14" />
-          פרטים אישיים
-        </h3>
+      <SideSection
+        icon="user-square"
+        title="פרטים אישיים"
+      >
         <ul class="fields">
           <li v-for="field in personalFields" :key="field.key" class="field">
             <h5 class="field-label">
@@ -16,19 +15,11 @@
             </p>
           </li>
         </ul>
-      </section>
-      <section class="side-section">
-        <h3 class="side-title">
-          <unicon name="english-to-chinese" fill="white" height="14" />
-          שפות
-        </h3>
+      </SideSection>
+      <SideSection icon="english-to-chinese" title="שפות">
         <Languages />
-      </section>
-      <section class="side-section">
-        <h3 class="side-title">
-          <unicon name="shield" fill="white" height="14" />
-          שירות צבאי
-        </h3>
+      </SideSection>
+      <SideSection icon="shield" title="שירות צבאי">
         <h5 class="field-label">
           2009-2011
         </h5>
@@ -43,16 +34,19 @@
             קידום שיתופי פעולה ונושאים אשר על סדר היום הארגוני
           </li>
         </ul>
-      </section>
-      <section class="side-section">
-        <h3 class="side-title">
-          <unicon name="silent-squint" fill="white" height="14" />
-          התנדבויות
-        </h3>
-        <h5 class="field-label">
-          2009-2011
-        </h5>
-      </section>
+      </SideSection>
+      <SideSection icon="heart-medical" title="התנדבויות">
+        <ul class="volunteerings">
+          <li v-for="volunteering in volunteerings" :key="volunteering.key" class="volunteering">
+            <h5 class="field-label">
+              {{ volunteering.dates }}
+            </h5>
+            <p class="field-value">
+              {{ volunteering.label }}
+            </p>
+          </li>
+        </ul>
+      </SideSection>
     </aside>
     <main class="main">
       <section class="primary-info">
@@ -82,13 +76,16 @@
 <script>
   import personalFields from '@/data/personal';
   import sections from '@/data/sections';
+  import volunteerings from '@/data/volunteerings';
   import Languages from '@/components/Languages';
   import Section from '@/components/Section';
+  import SideSection from '@/components/SideSection';
 
   export default {
     name: 'MainPage',
     components: {
       Section,
+      SideSection,
       Languages,
     },
     data: () => ({
@@ -101,6 +98,9 @@
       },
       personalFields() {
         return personalFields;
+      },
+      volunteerings() {
+        return volunteerings;
       },
     },
   }
@@ -125,24 +125,24 @@
   .container {
     width: 800px;
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 27% 73%;
 
     .side {
       padding: $spacer * 2 $spacer;
       background: $primary;
-      color: $white;
+      color: $light;
 
-      .side-section {
-        padding: $spacer / 2 0;
+      .volunteerings {
+        font-size: $font-size-sm;
+      }
 
-        .field {
-          font-size: $font-size-sm;
-          margin-bottom: $spacer / 3;
-        }
+      .field {
+        font-size: $font-size-sm;
+        margin-bottom: $spacer / 3;
+      }
 
-        .field-label {
-          color: $bright;
-        }
+      .field-label {
+        color: $bright;
       }
     }
 
@@ -177,12 +177,6 @@
           }
         }
       }
-    }
-  }
-
-  .side-section {
-    & + & {
-      margin-top: $spacer / 2;
     }
   }
 
