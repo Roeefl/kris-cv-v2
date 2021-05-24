@@ -1,7 +1,7 @@
 <template>
   <section class="side-section">
     <h3 class="side-title">
-      <unicon :name="icon" fill="white" height="18" />
+      <unicon :name="icon" fill="white" height="18" class="side-title-icon" />
       {{ title }}
     </h3>
     <slot></slot>
@@ -30,5 +30,15 @@
   .side-section {
     padding: $spacer / 2 0;
     margin-bottom: $spacer / 2;
+
+    .side-title {
+      display: flex;
+      align-items: center;
+
+      .unicon {
+        padding-top: 4px;
+        margin-left: $spacer / 4;
+      }
+    }
   }
 </style>

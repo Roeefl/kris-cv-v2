@@ -38,11 +38,14 @@
       <SideSection icon="heart-medical" title="התנדבויות">
         <ul class="volunteerings">
           <li v-for="volunteering in volunteerings" :key="volunteering.key" class="volunteering">
-            <h5 class="field-label">
+            <h5 class="volunteering-dates">
               {{ volunteering.dates }}
             </h5>
-            <p class="field-value">
-              {{ volunteering.label }}
+            <p class="volunteering-title">
+              {{ volunteering.title }}
+            </p>
+            <p class="volunteering-description">
+              {{ volunteering.description }}
             </p>
           </li>
         </ul>
@@ -133,7 +136,22 @@
       color: $light;
 
       .volunteerings {
-        font-size: $font-size-sm;
+        .volunteering {
+          margin-bottom: $spacer / 2;
+
+          .volunteering-dates {
+            color: $gray-2;
+            font-size: $font-size-sm;
+          }
+
+          .volunteering-title {
+            // font-size: $font-size-sm;
+          }
+
+          .volunteering-description {
+            font-size: $font-size-xs;
+          }
+        }
       }
 
       .field {
@@ -142,7 +160,7 @@
       }
 
       .field-label {
-        color: $bright;
+        color: $gray-2;
       }
     }
 

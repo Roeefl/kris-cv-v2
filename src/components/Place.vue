@@ -9,7 +9,7 @@
       <unicon name="university" fill="#6b385c" height="12" />
       {{ place.academy }}
     </h6>
-    <p class="dates">
+    <p v-if="place.startDate" class="dates">
       {{ place.startDate }} - {{ place.endDate }}
     </p>
     <p v-if="place.description" class="description">

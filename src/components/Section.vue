@@ -2,7 +2,7 @@
   <section class="section">
     <div class="section-header">
       <div class="section-icon">
-        <unicon v-if="iconName" :name="iconName" :fill="iconColor" height="16" />
+        <unicon v-if="iconName" :name="iconName" :fill="iconColor" height="18" />
       </div>
       <h4 class="section-title">
         {{ title }}
@@ -58,15 +58,19 @@
       @include gridded();
 
       .section-icon {
-        padding: $spacer / 6;
+        padding: 4px;
+        padding-top: 6px;
         background: $primary;
       }
 
       .section-title {
-        padding: $spacer / 6 $spacer / 2;
+        padding: 0 $spacer / 2;
         width: fit-content;
         background: $primary;
         color: $light;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
 
