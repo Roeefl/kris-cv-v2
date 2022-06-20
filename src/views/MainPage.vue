@@ -128,7 +128,7 @@
   .container {
     width: 800px;
     display: grid;
-    grid-template-columns: 27% 73%;
+    grid-template-columns: 25% 75%;
 
     .side {
       padding: $spacer * 2 $spacer;
