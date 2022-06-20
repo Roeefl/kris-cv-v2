@@ -38,7 +38,6 @@
     direction: rtl;
     display: flex;
     justify-content: center;
-    padding: 16px;
     font-weight: 500;
   }
 </style>
