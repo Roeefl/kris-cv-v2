@@ -15,11 +15,28 @@ export default [
     icon: 'suitcase',
     places: [
       {
+        title: 'מנהלת מרכז למידה בבית הספר ליאו בק',
+        type: 'שכירה',
+        company: 'בית הספר ליאו בק',
+        location: 'חיפה',
+        startDate: '2021',
+        endDate: 'עד היום',
+        description: 'כאן תחשבי מה את רוצה לככתוב בתיאור ותשלחי לי'
+      },
+      {
+        title: 'מנחת מוכנות לכיתה א',
+        type: 'שכירה',
+        company: 'בית הספר ליאו בק',
+        location: 'חיפה',
+        startDate: '2021',
+        endDate: 'עד היום',
+      },
+      {
         title: 'רכזת פרויקטים קהילתיים בשכונת הדר - כפר הסטודנטים',
         type: 'שכיר',
         company: 'כפר הסטודנטים',
         location: 'חיפה',
-        startDate: '2021',
+        startDate: '2022',
         endDate: 'עד היום',
         description: 'ניהול פרויקטים במסגרת תוכנית "פשוט.עושים", בשיתוף עם מתנ"סים וסטודנטים מלגאים',
       },
